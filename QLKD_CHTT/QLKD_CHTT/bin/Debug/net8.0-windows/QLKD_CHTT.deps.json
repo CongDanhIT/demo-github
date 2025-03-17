@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "QLKD_CHTT/1.0.0": {
+        "runtime": {
+          "QLKD_CHTT.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "QLKD_CHTT/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

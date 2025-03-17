@@ -1,0 +1,12 @@
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\bin\Debug\DoAn.exe.config
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\bin\Debug\DoAn.exe
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\bin\Debug\DoAn.pdb
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.csproj.AssemblyReference.cache
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.Properties.Resources.resources
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.DangNhap.resources
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.csproj.GenerateResource.cache
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.csproj.CoreCompileInputs.cache
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.exe
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.pdb
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.ChuQuan._2_GiaoDienCQ.resources
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.NhanVien._2_GiaoDienNV.resources

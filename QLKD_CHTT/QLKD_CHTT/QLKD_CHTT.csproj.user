@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="View\1-ĐangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Chủ Quán\2-GiaoDienCQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Nhân Viên\2-GiaoDienNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
