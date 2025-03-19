@@ -40,6 +40,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab_DonHang = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_TongTien = new System.Windows.Forms.TextBox();
             this.lbl_KM = new System.Windows.Forms.Label();
@@ -50,18 +52,22 @@
             this.list_HienThi = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BangSP = new System.Windows.Forms.DataGridView();
-            this.sảnPhẩmBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLKD_CHTTDataSet = new DoAn.QLKD_CHTTDataSet();
+            this.EditColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sảnPhẩmBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLKD_CHTTDataSet1_TonKhoVaSanPham = new DoAn.QLKD_CHTTDataSet1_TonKhoVaSanPham();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.sảnPhẩmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLKD_CHTTDataSet = new DoAn.QLKD_CHTTDataSet();
             this.sản_PhẩmTableAdapter = new DoAn.QLKD_CHTTDataSetTableAdapters.Sản_PhẩmTableAdapter();
-            this.EditColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tenSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mauSacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_ThanhToan = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.sảnPhẩmBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sản_PhẩmTableAdapter1 = new DoAn.QLKD_CHTTDataSet1_TonKhoVaSanPhamTableAdapters.Sản_PhẩmTableAdapter();
+            this.fKTồnKhoSảnPhẩmBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tồn_KhoTableAdapter = new DoAn.QLKD_CHTTDataSet1_TonKhoVaSanPhamTableAdapters.Tồn_KhoTableAdapter();
+            this.sảnPhẩmBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.sảnPhẩmBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.sảnPhẩmBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitVachNgan)).BeginInit();
             this.splitVachNgan.Panel1.SuspendLayout();
             this.splitVachNgan.Panel2.SuspendLayout();
@@ -74,8 +80,16 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BangSP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLKD_CHTTDataSet1_TonKhoVaSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKD_CHTTDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTồnKhoSảnPhẩmBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // splitVachNgan
@@ -218,6 +232,32 @@
             this.panel3.Size = new System.Drawing.Size(422, 496);
             this.panel3.TabIndex = 3;
             // 
+            // btn_Xoa
+            // 
+            this.btn_Xoa.BackColor = System.Drawing.Color.Black;
+            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
+            this.btn_Xoa.Location = new System.Drawing.Point(117, 445);
+            this.btn_Xoa.Name = "btn_Xoa";
+            this.btn_Xoa.Size = new System.Drawing.Size(110, 42);
+            this.btn_Xoa.TabIndex = 9;
+            this.btn_Xoa.Text = "Xóa";
+            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            // 
+            // btn_ThanhToan
+            // 
+            this.btn_ThanhToan.BackColor = System.Drawing.Color.Black;
+            this.btn_ThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btn_ThanhToan.Location = new System.Drawing.Point(255, 445);
+            this.btn_ThanhToan.Name = "btn_ThanhToan";
+            this.btn_ThanhToan.Size = new System.Drawing.Size(133, 42);
+            this.btn_ThanhToan.TabIndex = 8;
+            this.btn_ThanhToan.Text = "Thanh Toán";
+            this.btn_ThanhToan.UseVisualStyleBackColor = false;
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -304,19 +344,12 @@
             // BangSP
             // 
             this.BangSP.AllowUserToOrderColumns = true;
-            this.BangSP.AutoGenerateColumns = false;
             this.BangSP.BackgroundColor = System.Drawing.Color.White;
             this.BangSP.ColumnHeadersHeight = 40;
             this.BangSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EditColumn,
-            this.tenSanPham,
-            this.Size,
-            this.mauSacDataGridViewTextBoxColumn,
-            this.Gia});
-            this.BangSP.DataSource = this.sảnPhẩmBindingSource;
+            this.EditColumn});
             this.BangSP.Location = new System.Drawing.Point(6, 141);
             this.BangSP.Name = "BangSP";
-            this.BangSP.ReadOnly = true;
             this.BangSP.RowHeadersWidth = 10;
             this.BangSP.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.BangSP.RowTemplate.Height = 24;
@@ -324,15 +357,27 @@
             this.BangSP.TabIndex = 1;
             this.BangSP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // sảnPhẩmBindingSource
+            // EditColumn
             // 
-            this.sảnPhẩmBindingSource.DataMember = "Sản Phẩm";
-            this.sảnPhẩmBindingSource.DataSource = this.qLKD_CHTTDataSet;
+            this.EditColumn.HeaderText = "Chỉnh Sửa";
+            this.EditColumn.MinimumWidth = 6;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.Width = 125;
             // 
-            // qLKD_CHTTDataSet
+            // sảnPhẩmBindingSource5
             // 
-            this.qLKD_CHTTDataSet.DataSetName = "QLKD_CHTTDataSet";
-            this.qLKD_CHTTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.sảnPhẩmBindingSource5.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource5.DataSource = this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
+            // 
+            // qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource
+            // 
+            this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource.DataSource = this.qLKD_CHTTDataSet1_TonKhoVaSanPham;
+            this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource.Position = 0;
+            // 
+            // qLKD_CHTTDataSet1_TonKhoVaSanPham
+            // 
+            this.qLKD_CHTTDataSet1_TonKhoVaSanPham.DataSetName = "QLKD_CHTTDataSet1_TonKhoVaSanPham";
+            this.qLKD_CHTTDataSet1_TonKhoVaSanPham.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox1
             // 
@@ -351,79 +396,52 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // sảnPhẩmBindingSource
+            // 
+            this.sảnPhẩmBindingSource.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource.DataSource = this.qLKD_CHTTDataSet;
+            // 
+            // qLKD_CHTTDataSet
+            // 
+            this.qLKD_CHTTDataSet.DataSetName = "QLKD_CHTTDataSet";
+            this.qLKD_CHTTDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // sản_PhẩmTableAdapter
             // 
             this.sản_PhẩmTableAdapter.ClearBeforeFill = true;
             // 
-            // EditColumn
+            // sảnPhẩmBindingSource1
             // 
-            this.EditColumn.HeaderText = "Chỉnh Sửa";
-            this.EditColumn.MinimumWidth = 6;
-            this.EditColumn.Name = "EditColumn";
-            this.EditColumn.ReadOnly = true;
-            this.EditColumn.Width = 125;
+            this.sảnPhẩmBindingSource1.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource1.DataSource = this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
             // 
-            // tenSanPham
+            // sản_PhẩmTableAdapter1
             // 
-            this.tenSanPham.DataPropertyName = "TenSanPham";
-            this.tenSanPham.HeaderText = "TenSanPham";
-            this.tenSanPham.MinimumWidth = 6;
-            this.tenSanPham.Name = "tenSanPham";
-            this.tenSanPham.ReadOnly = true;
-            this.tenSanPham.Width = 125;
+            this.sản_PhẩmTableAdapter1.ClearBeforeFill = true;
             // 
-            // Size
+            // fKTồnKhoSảnPhẩmBindingSource
             // 
-            this.Size.DataPropertyName = "Size";
-            this.Size.HeaderText = "Size";
-            this.Size.MinimumWidth = 6;
-            this.Size.Name = "Size";
-            this.Size.ReadOnly = true;
-            this.Size.Width = 125;
+            this.fKTồnKhoSảnPhẩmBindingSource.DataMember = "FK_Tồn Kho_Sản Phẩm";
+            this.fKTồnKhoSảnPhẩmBindingSource.DataSource = this.sảnPhẩmBindingSource1;
             // 
-            // mauSacDataGridViewTextBoxColumn
+            // tồn_KhoTableAdapter
             // 
-            this.mauSacDataGridViewTextBoxColumn.DataPropertyName = "MauSac";
-            this.mauSacDataGridViewTextBoxColumn.HeaderText = "MauSac";
-            this.mauSacDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mauSacDataGridViewTextBoxColumn.Name = "mauSacDataGridViewTextBoxColumn";
-            this.mauSacDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mauSacDataGridViewTextBoxColumn.Width = 125;
+            this.tồn_KhoTableAdapter.ClearBeforeFill = true;
             // 
-            // Gia
+            // sảnPhẩmBindingSource2
             // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Gia";
-            this.Gia.MinimumWidth = 6;
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
-            this.Gia.Width = 125;
+            this.sảnPhẩmBindingSource2.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource2.DataSource = this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
             // 
-            // btn_ThanhToan
+            // sảnPhẩmBindingSource3
             // 
-            this.btn_ThanhToan.BackColor = System.Drawing.Color.Black;
-            this.btn_ThanhToan.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btn_ThanhToan.Location = new System.Drawing.Point(255, 445);
-            this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(133, 42);
-            this.btn_ThanhToan.TabIndex = 8;
-            this.btn_ThanhToan.Text = "Thanh Toán";
-            this.btn_ThanhToan.UseVisualStyleBackColor = false;
-            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
+            this.sảnPhẩmBindingSource3.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource3.DataSource = this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
             // 
-            // btn_Xoa
+            // sảnPhẩmBindingSource4
             // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.Black;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa.Location = new System.Drawing.Point(117, 445);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(110, 42);
-            this.btn_Xoa.TabIndex = 9;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
-            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
+            this.sảnPhẩmBindingSource4.DataMember = "Sản Phẩm";
+            this.sảnPhẩmBindingSource4.DataSource = this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
             // 
             // _2_GiaoDienNV
             // 
@@ -449,8 +467,16 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BangSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLKD_CHTTDataSet1_TonKhoVaSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKD_CHTTDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKTồnKhoSảnPhẩmBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sảnPhẩmBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,9 +512,15 @@
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_ThanhToan;
         private System.Windows.Forms.DataGridViewButtonColumn EditColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Size;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mauSacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.BindingSource qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource;
+        private QLKD_CHTTDataSet1_TonKhoVaSanPham qLKD_CHTTDataSet1_TonKhoVaSanPham;
+        private System.Windows.Forms.BindingSource sảnPhẩmBindingSource1;
+        private QLKD_CHTTDataSet1_TonKhoVaSanPhamTableAdapters.Sản_PhẩmTableAdapter sản_PhẩmTableAdapter1;
+        private System.Windows.Forms.BindingSource fKTồnKhoSảnPhẩmBindingSource;
+        private QLKD_CHTTDataSet1_TonKhoVaSanPhamTableAdapters.Tồn_KhoTableAdapter tồn_KhoTableAdapter;
+        private System.Windows.Forms.BindingSource sảnPhẩmBindingSource5;
+        private System.Windows.Forms.BindingSource sảnPhẩmBindingSource2;
+        private System.Windows.Forms.BindingSource sảnPhẩmBindingSource3;
+        private System.Windows.Forms.BindingSource sảnPhẩmBindingSource4;
     }
 }

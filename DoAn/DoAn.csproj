@@ -58,8 +58,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKD_CHTTDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLKD_CHTTDataSet1_TonKhoVaSanPham.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLKD_CHTTDataSet1_TonKhoVaSanPham.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Services\Login\XacThucDangNhap.cs" />
     <Compile Include="Services\ThanhToan\CTHDManager.cs" />
+    <Compile Include="Services\ThanhToan\KhoHangService.cs" />
     <Compile Include="Services\ThanhToan\LapHD.cs" />
     <Compile Include="View\1-DangNhap.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,17 @@
     </None>
     <None Include="QLKD_CHTTDataSet.xss">
       <DependentUpon>QLKD_CHTTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLKD_CHTTDataSet1_TonKhoVaSanPham.xsc">
+      <DependentUpon>QLKD_CHTTDataSet1_TonKhoVaSanPham.xsd</DependentUpon>
+    </None>
+    <None Include="QLKD_CHTTDataSet1_TonKhoVaSanPham.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLKD_CHTTDataSet1_TonKhoVaSanPham.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLKD_CHTTDataSet1_TonKhoVaSanPham.xss">
+      <DependentUpon>QLKD_CHTTDataSet1_TonKhoVaSanPham.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
