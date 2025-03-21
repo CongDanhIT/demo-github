@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DoAn.View.ChuQuan;
+using DoAn.View.CTTK;
 using DoAn.View.NhanVien;
 
 namespace DoAn

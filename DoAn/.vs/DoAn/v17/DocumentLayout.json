@@ -3,52 +3,44 @@
   "WorkspaceRootPath": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|f:\\leanr-inschool\\\u0111\u1ED3 \u00E1n\\soruce code\\demo-github\\doan\\view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|f:\\leanr-inschool\\\u0111\u1ED3 \u00E1n\\soruce code\\demo-github\\doan\\view\\cttk\\thongtintk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\cttk\\thongtintk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\view\\cttk\\thongtintk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\cttk\\thongtintk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\services\\thanhtoan\\khohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\thanhtoan\\khohangservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|f:\\leanr-inschool\\\u0111\u1ED3 \u00E1n\\soruce code\\demo-github\\doan\\services\\capnhat\\capnhatttnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\capnhat\\capnhatttnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\view\\1-dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\1-dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|f:\\leanr-inschool\\\u0111\u1ED3 \u00E1n\\soruce code\\demo-github\\doan\\services\\xemthongtin\\chitiettthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\xemthongtin\\chitiettthoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\services\\thanhtoan\\cthdmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\thanhtoan\\cthdmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\modal\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:modal\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\services\\thanhtoan\\laphd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\thanhtoan\\laphd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\helper\\randomhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:helper\\randomhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\modal\\currentaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:modal\\currentaccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\view\\1-dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\1-dangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|f:\\leanr-inschool\\\u0111\u1ED3 \u00E1n\\soruce code\\demo-github\\doan\\services\\login\\xacthucdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\login\\xacthucdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\DataAccess\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DataAccess\\DatabaseHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:view\\nhanvien\\2-giaodiennv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\modal\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:modal\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\services\\xemthongtin\\thongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:services\\xemthongtin\\thongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\modal\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCC726F9-C97F-4268-8E72-CF181EB13F63}|DoAn.csproj|solutionrelative:modal\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,32 +58,83 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KhoHangService.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\KhoHangService.cs",
-              "RelativeDocumentMoniker": "Services\\ThanhToan\\KhoHangService.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\KhoHangService.cs",
-              "RelativeToolTip": "Services\\ThanhToan\\KhoHangService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBwAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ChiTietTTHoaDon.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\XemThongTin\\ChiTietTTHoaDon.cs",
+              "RelativeDocumentMoniker": "Services\\XemThongTin\\ChiTietTTHoaDon.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\XemThongTin\\ChiTietTTHoaDon.cs",
+              "RelativeToolTip": "Services\\XemThongTin\\ChiTietTTHoaDon.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T13:23:47.713Z"
+              "WhenOpened": "2025-03-21T03:53:10.882Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "2-GiaoDienNV.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\NhanVien\\2-GiaoDienNV.cs",
-              "RelativeDocumentMoniker": "View\\NhanVien\\2-GiaoDienNV.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\NhanVien\\2-GiaoDienNV.cs",
-              "RelativeToolTip": "View\\NhanVien\\2-GiaoDienNV.cs",
-              "ViewState": "AgIAAOAAAAAAAAAAAAAuwPcAAAA8AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "XacThucDangNhap.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\Login\\XacThucDangNhap.cs",
+              "RelativeDocumentMoniker": "Services\\Login\\XacThucDangNhap.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\Login\\XacThucDangNhap.cs",
+              "RelativeToolTip": "Services\\Login\\XacThucDangNhap.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwAsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T06:22:52.085Z",
+              "WhenOpened": "2025-03-21T03:49:22.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CapNhatTTNV.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\CapNhat\\CapNhatTTNV.cs",
+              "RelativeDocumentMoniker": "Services\\CapNhat\\CapNhatTTNV.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\CapNhat\\CapNhatTTNV.cs",
+              "RelativeToolTip": "Services\\CapNhat\\CapNhatTTNV.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvw0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T03:47:32.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ThongTinTK.cs [Design]",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\CTTK\\ThongTinTK.cs",
+              "RelativeDocumentMoniker": "View\\CTTK\\ThongTinTK.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\CTTK\\ThongTinTK.cs [Design]",
+              "RelativeToolTip": "View\\CTTK\\ThongTinTK.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T06:27:59.814Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ThongTinTK.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\CTTK\\ThongTinTK.cs",
+              "RelativeDocumentMoniker": "View\\CTTK\\ThongTinTK.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\CTTK\\ThongTinTK.cs",
+              "RelativeToolTip": "View\\CTTK\\ThongTinTK.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAApwBoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T06:48:30.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T03:23:05.147Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "2-GiaoDienNV.cs [Design]",
               "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\NhanVien\\2-GiaoDienNV.cs",
               "RelativeDocumentMoniker": "View\\NhanVien\\2-GiaoDienNV.cs",
@@ -102,109 +145,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LapHD.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\LapHD.cs",
-              "RelativeDocumentMoniker": "Services\\ThanhToan\\LapHD.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\LapHD.cs",
-              "RelativeToolTip": "Services\\ThanhToan\\LapHD.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "ThongTinNV.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\XemThongTin\\ThongTinNV.cs",
+              "RelativeDocumentMoniker": "Services\\XemThongTin\\ThongTinNV.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\XemThongTin\\ThongTinNV.cs",
+              "RelativeToolTip": "Services\\XemThongTin\\ThongTinNV.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwA4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T12:46:00.534Z"
+              "WhenOpened": "2025-03-20T14:38:21.939Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "RandomHelper.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Helper\\RandomHelper.cs",
-              "RelativeDocumentMoniker": "Helper\\RandomHelper.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Helper\\RandomHelper.cs",
-              "RelativeToolTip": "Helper\\RandomHelper.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB4AAAAEAAAAAAAAAA==",
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\NhanVien.cs",
+              "RelativeDocumentMoniker": "Modal\\NhanVien.cs",
+              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\NhanVien.cs",
+              "RelativeToolTip": "Modal\\NhanVien.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T12:41:54.635Z"
+              "WhenOpened": "2025-03-20T14:55:35.32Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "1-DangNhap.cs [Design]",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\1-DangNhap.cs",
-              "RelativeDocumentMoniker": "View\\1-DangNhap.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\1-DangNhap.cs [Design]",
-              "RelativeToolTip": "View\\1-DangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T12:35:06.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CTHDManager.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\CTHDManager.cs",
-              "RelativeDocumentMoniker": "Services\\ThanhToan\\CTHDManager.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Services\\ThanhToan\\CTHDManager.cs",
-              "RelativeToolTip": "Services\\ThanhToan\\CTHDManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T05:33:26.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CurrentAccount.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\CurrentAccount.cs",
-              "RelativeDocumentMoniker": "Modal\\CurrentAccount.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\CurrentAccount.cs",
-              "RelativeToolTip": "Modal\\CurrentAccount.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAADwvzQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T04:04:51.401Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "SanPham.cs",
               "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\SanPham.cs",
               "RelativeDocumentMoniker": "Modal\\SanPham.cs",
               "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Modal\\SanPham.cs",
               "RelativeToolTip": "Modal\\SanPham.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T04:14:24.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "1-DangNhap.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\1-DangNhap.cs",
-              "RelativeDocumentMoniker": "View\\1-DangNhap.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\View\\1-DangNhap.cs",
-              "RelativeToolTip": "View\\1-DangNhap.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T12:35:10.503Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T03:23:05.147Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\DataAccess\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "DataAccess\\DatabaseHelper.cs",
-              "ToolTip": "F:\\Leanr-inSchool\\\u0110\u1ED3 \u00E1n\\soruce code\\demo-github\\DoAn\\DataAccess\\DatabaseHelper.cs",
-              "RelativeToolTip": "DataAccess\\DatabaseHelper.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T11:51:42.724Z"
+              "WhenOpened": "2025-03-20T14:36:29.897Z"
             }
           ]
         }
