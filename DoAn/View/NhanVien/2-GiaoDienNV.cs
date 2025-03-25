@@ -82,7 +82,7 @@ namespace DoAn.View.NhanVien
                     // Sắp xếp thứ tự cột
                     BangSP.Columns["TenSanPham"].DisplayIndex = 1; // Tên sản phẩm ở vị trí [1]
                     BangSP.Columns["Gia"].DisplayIndex = 4; // Giá ở vị trí [4]
-
+                    BangSP.Columns["TenSanPham"].Width = 200;
                     // Ẩn các cột không cần hiển thị
                     BangSP.Columns["ID_SP"].Visible = false;
                     BangSP.Columns["MaSanPham"].Visible = false;

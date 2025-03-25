@@ -69,4 +69,49 @@ public class RandomHoaDon
 
         return $"{currentChar}{currentNumber:D5}";
     }
+    public class RandomPhieuNhap
+    {
+        private static string connectionString = "Server=DESKTOP-J7AQH5B;Database=QLKD_CHTT;User Id=sa;Password=123456;";
+
+        public static string GeneratePhieuNhap()
+        {
+            string lastMaPhieuNhap = GetLastPhieuNhapFromDatabase();
+            return NextPhieuNhap(lastMaPhieuNhap);
+        }
+
+        private static string GetLastPhieuNhapFromDatabase()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT TOP 1 ID_PhieuNhap FROM [Phiếu Nhập] ORDER BY ID_PhieuNhap DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? "A00000"; // Nếu chưa có, bắt đầu từ A00000
+                }
+            }
+        }
+
+        private static string NextPhieuNhap(string lastPhieuNhap)
+        {
+            char currentChar = lastPhieuNhap[0];
+            int currentNumber = int.Parse(lastPhieuNhap.Substring(1));
+
+            currentNumber++;
+
+            if (currentNumber > 99999)
+            {
+                currentNumber = 0;
+                currentChar++;
+
+                if (currentChar > 'Z')
+                {
+                    throw new InvalidOperationException("Đã đạt giới hạn mã phiếu nhập (Z99999).");
+                }
+            }
+
+            return $"{currentChar}{currentNumber:D5}";
+        }
+    }
 }

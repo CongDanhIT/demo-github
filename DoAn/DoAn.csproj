@@ -49,8 +49,10 @@
     <Compile Include="Helper\DatabaseHelper.cs" />
     <Compile Include="Helper\RandomHelper.cs" />
     <Compile Include="Modal\CurrentAccount.cs" />
+    <Compile Include="Modal\Kho.cs" />
     <Compile Include="Modal\NhanVien.cs" />
     <Compile Include="Modal\SanPham.cs" />
+    <Compile Include="Modal\SanPhamMoiNhap.cs" />
     <Compile Include="QLKD_CHTTDataSet.cs">
       <DependentUpon>QLKD_CHTTDataSet.xsd</DependentUpon>
     </Compile>
@@ -75,7 +77,11 @@
     <Compile Include="Services\ThanhToan\CTHDManager.cs" />
     <Compile Include="Services\ThanhToan\KhoHangService.cs" />
     <Compile Include="Services\ThanhToan\LapHD.cs" />
+    <Compile Include="Services\Them\AddKho.cs" />
+    <Compile Include="Services\Them\NhapSP.cs" />
+    <Compile Include="Services\XemThongTin\ChiTietPhieuNhap.cs" />
     <Compile Include="Services\XemThongTin\ChiTietTTHoaDon.cs" />
+    <Compile Include="Services\XemThongTin\DSKho.cs" />
     <Compile Include="Services\XemThongTin\ThongTinNV.cs" />
     <Compile Include="View\1-DangNhap.cs">
       <SubType>Form</SubType>
@@ -85,16 +91,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ChiTietThongTin\ChiTietPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\ChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChuQuan\2-GiaoDienCQ.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ChuQuan\2-GiaoDienCQ.Designer.cs">
       <DependentUpon>2-GiaoDienCQ.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CTTK\ThongTinTK.cs">
+    <Compile Include="View\ChuQuan\ThemKho.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CTTK\ThongTinTK.Designer.cs">
+    <Compile Include="View\ChuQuan\ThemKho.Designer.cs">
+      <DependentUpon>ThemKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\ThongTinTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\ThongTinTK.Designer.cs">
       <DependentUpon>ThongTinTK.cs</DependentUpon>
     </Compile>
     <Compile Include="View\NhanVien\2-GiaoDienNV.cs">
@@ -116,10 +134,16 @@
     <EmbeddedResource Include="View\1-DangNhap.resx">
       <DependentUpon>1-DangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChiTietThongTin\ChiTietPhieuNhap.resx">
+      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ChuQuan\2-GiaoDienCQ.resx">
       <DependentUpon>2-GiaoDienCQ.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CTTK\ThongTinTK.resx">
+    <EmbeddedResource Include="View\ChuQuan\ThemKho.resx">
+      <DependentUpon>ThemKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChiTietThongTin\ThongTinTK.resx">
       <DependentUpon>ThongTinTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\NhanVien\2-GiaoDienNV.resx">
@@ -173,9 +197,17 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="img\Back3.jpg" />
+    <Content Include="img\back5.jpg" />
+    <Content Include="img\back6.jpg" />
+    <Content Include="img\back7.jpg" />
+    <Content Include="img\Backg1.jpg" />
+    <Content Include="img\Backg2.jpg" />
+    <Content Include="img\Backg4.jpg" />
     <Content Include="img\DangNhapposter.jpg" />
     <Content Include="img\search-file.png" />
     <Content Include="img\user.png" />
+    <None Include="Resources\back6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

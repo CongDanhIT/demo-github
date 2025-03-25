@@ -20,6 +20,6 @@ namespace DoAn.Modal
             Gia = gia;
             SoLuong = 1; // Mặc định số lượng là 1
         }
-
+        public SanPham() { }
     }
 }

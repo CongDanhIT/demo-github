@@ -11,3 +11,5 @@ F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.pdb
 F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.ChuQuan._2_GiaoDienCQ.resources
 F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.NhanVien._2_GiaoDienNV.resources
 F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.CTTK.ThongTinTK.resources
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.ChuQuan.ThemKho.resources
+F:\Leanr-inSchool\Đồ án\soruce code\demo-github\DoAn\obj\Debug\DoAn.View.ChiTietThongTin.ChiTietPhieuNhap.resources
