@@ -114,4 +114,37 @@ public class RandomHoaDon
             return $"{currentChar}{currentNumber:D5}";
         }
     }
+    public class RandomMaNhanVien
+    {
+        private static string connectionString = "Server=DESKTOP-J7AQH5B;Database=QLKD_CHTT;User Id=sa;Password=123456;";
+
+        public static string GenerateMaNhanVien()
+        {
+            string lastMaNV = GetLastMaNhanVienFromDatabase();
+            return NextMaNhanVien(lastMaNV);
+        }
+
+        private static string GetLastMaNhanVienFromDatabase()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT TOP 1 ID_NV FROM [Nhân Viên] WHERE ID_NV LIKE 'NV%' ORDER BY ID_NV DESC";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString() ?? "NV0000"; // Nếu chưa có NV, bắt đầu từ NV0000
+                }
+            }
+        }
+
+        private static string NextMaNhanVien(string lastMaNV)
+        {
+            int currentNumber = int.Parse(lastMaNV.Substring(2)); // Lấy số phía sau "NV"
+            currentNumber++;
+
+            return $"NV{currentNumber:D4}"; // Định dạng thành NV0001, NV0002,... (đúng 6 ký tự)
+        }
+    }
+
 }

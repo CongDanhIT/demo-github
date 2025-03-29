@@ -341,24 +341,33 @@ namespace DoAn.View.NhanVien
             decimal TongTien = decimal.Parse(txt_TongTien.Text);
             int id_tk = int.Parse(CurrentUserSession.CurrentUser.ID_TK);
             string Id_HD = RandomHoaDon.GenerateHoaDon();
+
+            // Cập nhật hóa đơn và các bảng liên quan
             LapHD.CapNhatHD(id_tk, TongTien, Id_HD, now);
             CTHDManager.CapNhatCTHD(Id_HD, danhSachSanPham);
             KhoHangService.CapNhatTonKho(danhSachSanPham);
-            // cần cập nhật Bảng hóa Đơn
-            // cần Cập nhật chi tiết hóa đơn
+
+            // Cập nhật bảng sản phẩm và hóa đơn
             LoadBangSP();
             LoadBangHD();
+
+            // Cập nhật số hóa đơn trong ngày và tổng thu trong ngày
             SoHDTrongNgay++;
             if (decimal.TryParse(txt_TongTien.Text, out decimal tongTien))
             {
-                TongThuNgay += tongTien; // Nếu `TongThuNgay` cũng là `decimal`
+                TongThuNgay += tongTien;
             }
             else
             {
                 MessageBox.Show("Giá trị tổng tiền không hợp lệ! Hãy nhập số hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
             txt_SoHD.Text = SoHDTrongNgay.ToString("N0");
             text_TongTien.Text = TongThuNgay.ToString("N0");
+
+            // Xóa danh sách sản phẩm và list box hiển thị sau khi thanh toán
+            danhSachSanPham.Clear();
+            list_HienThi.Items.Clear();
 
 
         }

@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLKD_CHTTDataSet1_TonKhoVaSanPham.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Services\CapNhat\CapNhatCTHD.cs" />
+    <Compile Include="Services\CapNhat\CapNhatCTNK.cs" />
+    <Compile Include="Services\CapNhat\CapNhatSP.cs" />
     <Compile Include="Services\CapNhat\CapNhatTTNV.cs" />
     <Compile Include="Services\Login\XacThucDangNhap.cs" />
     <Compile Include="Services\QLKH\ThemKhachHang.cs" />
@@ -79,6 +83,8 @@
     <Compile Include="Services\ThanhToan\LapHD.cs" />
     <Compile Include="Services\Them\AddKho.cs" />
     <Compile Include="Services\Them\NhapSP.cs" />
+    <Compile Include="Services\Them\ServiceSanPham.cs" />
+    <Compile Include="Services\Them\ThemNV.cs" />
     <Compile Include="Services\XemThongTin\ChiTietPhieuNhap.cs" />
     <Compile Include="Services\XemThongTin\ChiTietTTHoaDon.cs" />
     <Compile Include="Services\XemThongTin\DSKho.cs" />
@@ -91,11 +97,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\ChiTietThongTin\ChiTietPhieuNhap.cs">
+    <Compile Include="View\ChiTietThongTin\FormChiTietPhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ChiTietThongTin\ChiTietPhieuNhap.Designer.cs">
-      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    <Compile Include="View\ChiTietThongTin\FormChiTietPhieuNhap.Designer.cs">
+      <DependentUpon>FormChiTietPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormDuaSPLenCH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormDuaSPLenCH.Designer.cs">
+      <DependentUpon>FormDuaSPLenCH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormSuaHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormSuaHoaDon.Designer.cs">
+      <DependentUpon>FormSuaHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormSuaSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChiTietThongTin\FormSuaSP.Designer.cs">
+      <DependentUpon>FormSuaSP.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChuQuan\2-GiaoDienCQ.cs">
       <SubType>Form</SubType>
@@ -134,8 +158,17 @@
     <EmbeddedResource Include="View\1-DangNhap.resx">
       <DependentUpon>1-DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChiTietThongTin\ChiTietPhieuNhap.resx">
-      <DependentUpon>ChiTietPhieuNhap.cs</DependentUpon>
+    <EmbeddedResource Include="View\ChiTietThongTin\FormChiTietPhieuNhap.resx">
+      <DependentUpon>FormChiTietPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChiTietThongTin\FormDuaSPLenCH.resx">
+      <DependentUpon>FormDuaSPLenCH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChiTietThongTin\FormSuaHoaDon.resx">
+      <DependentUpon>FormSuaHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChiTietThongTin\FormSuaSP.resx">
+      <DependentUpon>FormSuaSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChuQuan\2-GiaoDienCQ.resx">
       <DependentUpon>2-GiaoDienCQ.cs</DependentUpon>
