@@ -74,10 +74,13 @@ namespace DoAn.View.ChiTietThongTin
 
                 bool result = ServiceSanPham.UpdateSanPhamTonKho(idSP, idKhoNhap, tenSP);
 
+
+
                 if (result)
                 {
                     MessageBox.Show("Cập nhật tồn kho thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     form.LoadBangSPChuaBan();
+                    ServiceSanPham.UpdateIDSPInCTNK(idKhoNhap, tenSP, idSP);
                 }
                 else
                 {

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitVachNgan = new System.Windows.Forms.SplitContainer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.text_TongTien = new System.Windows.Forms.TextBox();
@@ -55,11 +55,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BangSP = new System.Windows.Forms.DataGridView();
             this.EditColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_SearchDH = new System.Windows.Forms.TextBox();
             this.tab_HoaDon = new System.Windows.Forms.TabPage();
             this.BangHoaDon = new System.Windows.Forms.DataGridView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_SearchHD = new System.Windows.Forms.TextBox();
             this.tab_KM = new System.Windows.Forms.TabPage();
             this.lbl_KMKH = new System.Windows.Forms.Label();
             this.lbl_SPKM = new System.Windows.Forms.Label();
@@ -78,7 +78,7 @@
             this.lbl_TenKH = new System.Windows.Forms.Label();
             this.txt_TenKhach = new System.Windows.Forms.TextBox();
             this.BangKH = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_SearchKH = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.sảnPhẩmBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.qLKDCHTTDataSet1TonKhoVaSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -252,7 +252,7 @@
             this.tab_DonHang.Controls.Add(this.panel3);
             this.tab_DonHang.Controls.Add(this.pictureBox1);
             this.tab_DonHang.Controls.Add(this.BangSP);
-            this.tab_DonHang.Controls.Add(this.textBox1);
+            this.tab_DonHang.Controls.Add(this.txt_SearchDH);
             this.tab_DonHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tab_DonHang.Location = new System.Drawing.Point(4, 44);
             this.tab_DonHang.Name = "tab_DonHang";
@@ -402,14 +402,14 @@
             this.BangSP.AllowUserToOrderColumns = true;
             this.BangSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.BangSP.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BangSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(34)))), ((int)(((byte)(34)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(74)))), ((int)(((byte)(74)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BangSP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.BangSP.ColumnHeadersHeight = 40;
             this.BangSP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditColumn});
@@ -418,8 +418,8 @@
             this.BangSP.Name = "BangSP";
             this.BangSP.RowHeadersWidth = 10;
             this.BangSP.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BangSP.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BangSP.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.BangSP.RowTemplate.Height = 24;
             this.BangSP.Size = new System.Drawing.Size(642, 423);
             this.BangSP.TabIndex = 1;
@@ -432,13 +432,14 @@
             this.EditColumn.Name = "EditColumn";
             this.EditColumn.Width = 29;
             // 
-            // textBox1
+            // txt_SearchDH
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.Location = new System.Drawing.Point(8, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(556, 34);
-            this.textBox1.TabIndex = 0;
+            this.txt_SearchDH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_SearchDH.Location = new System.Drawing.Point(8, 75);
+            this.txt_SearchDH.Name = "txt_SearchDH";
+            this.txt_SearchDH.Size = new System.Drawing.Size(556, 34);
+            this.txt_SearchDH.TabIndex = 0;
+            this.txt_SearchDH.TextChanged += new System.EventHandler(this.txt_SearchDH_TextChanged);
             // 
             // tab_HoaDon
             // 
@@ -447,7 +448,7 @@
             this.tab_HoaDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_HoaDon.Controls.Add(this.BangHoaDon);
             this.tab_HoaDon.Controls.Add(this.pictureBox2);
-            this.tab_HoaDon.Controls.Add(this.textBox2);
+            this.tab_HoaDon.Controls.Add(this.txt_SearchHD);
             this.tab_HoaDon.Location = new System.Drawing.Point(4, 44);
             this.tab_HoaDon.Name = "tab_HoaDon";
             this.tab_HoaDon.Padding = new System.Windows.Forms.Padding(3);
@@ -478,14 +479,15 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // txt_SearchHD
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(88, 73);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(807, 34);
-            this.textBox2.TabIndex = 0;
+            this.txt_SearchHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_SearchHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchHD.Location = new System.Drawing.Point(88, 73);
+            this.txt_SearchHD.Name = "txt_SearchHD";
+            this.txt_SearchHD.Size = new System.Drawing.Size(807, 34);
+            this.txt_SearchHD.TabIndex = 0;
+            this.txt_SearchHD.TextChanged += new System.EventHandler(this.txt_SearchHD_TextChanged);
             // 
             // tab_KM
             // 
@@ -582,7 +584,7 @@
             this.tab_KH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tab_KH.Controls.Add(this.pnl_ThemKhach);
             this.tab_KH.Controls.Add(this.BangKH);
-            this.tab_KH.Controls.Add(this.textBox3);
+            this.tab_KH.Controls.Add(this.txt_SearchKH);
             this.tab_KH.Controls.Add(this.pictureBox3);
             this.tab_KH.Location = new System.Drawing.Point(4, 44);
             this.tab_KH.Name = "tab_KH";
@@ -676,14 +678,15 @@
             this.BangKH.Size = new System.Drawing.Size(483, 400);
             this.BangKH.TabIndex = 2;
             // 
-            // textBox3
+            // txt_SearchKH
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(80, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(408, 34);
-            this.textBox3.TabIndex = 0;
+            this.txt_SearchKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_SearchKH.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SearchKH.Location = new System.Drawing.Point(80, 91);
+            this.txt_SearchKH.Name = "txt_SearchKH";
+            this.txt_SearchKH.Size = new System.Drawing.Size(408, 34);
+            this.txt_SearchKH.TabIndex = 0;
+            this.txt_SearchKH.TextChanged += new System.EventHandler(this.txt_SearchKH_TextChanged);
             // 
             // pictureBox3
             // 
@@ -830,7 +833,7 @@
         private System.Windows.Forms.TabPage tab_DonHang;
         private System.Windows.Forms.TabPage tab_HoaDon;
         private System.Windows.Forms.DataGridView BangSP;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_SearchDH;
         private QLKD_CHTTDataSet qLKD_CHTTDataSet;
         private System.Windows.Forms.BindingSource sảnPhẩmBindingSource;
         private QLKD_CHTTDataSetTableAdapters.Sản_PhẩmTableAdapter sản_PhẩmTableAdapter;
@@ -856,7 +859,7 @@
         private System.Windows.Forms.BindingSource sảnPhẩmBindingSource2;
         private System.Windows.Forms.BindingSource sảnPhẩmBindingSource3;
         private System.Windows.Forms.BindingSource sảnPhẩmBindingSource4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_SearchHD;
         private System.Windows.Forms.DataGridView BangHoaDon;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tab_KM;
@@ -870,7 +873,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn khuyenMaiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView BangKH;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_SearchKH;
         private System.Windows.Forms.Panel pnl_ThemKhach;
         private System.Windows.Forms.TextBox txt_TenKhach;
         private System.Windows.Forms.Button btn_DatLai;

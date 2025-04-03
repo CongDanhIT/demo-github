@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DoAn.Services.Them
 {
@@ -121,6 +122,35 @@ namespace DoAn.Services.Them
             catch (Exception ex)
             {
                 Console.WriteLine("Lỗi khi cập nhật Tồn Kho: " + ex.Message);
+                return false;
+            }
+
+        }
+        public static bool UpdateIDSPInCTNK(int idKho, string tenSP, int idSP)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Cập nhật ID_SP dựa trên ID_Kho và TenSP
+                    string updateQuery = "UPDATE [CTNK] SET ID_SP = @ID_SP Where TenSP = @TenSP";
+
+                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, conn))
+                    {
+                        updateCmd.Parameters.AddWithValue("@ID_SP", idSP);
+                        updateCmd.Parameters.AddWithValue("@ID_Kho", idKho);
+                        updateCmd.Parameters.AddWithValue("@TenSP", tenSP);
+
+                        int rowsUpdated = updateCmd.ExecuteNonQuery();
+                        return rowsUpdated > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi cập nhật ID_SP trong CTNK: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }

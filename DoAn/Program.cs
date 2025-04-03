@@ -19,7 +19,7 @@ namespace DoAn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new _2_GiaoDienCQ());
+            Application.Run(new DangNhap());
         }
     }
 }

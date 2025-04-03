@@ -11,14 +11,17 @@ namespace DoAn.Services.XemThongTin
     public class ChiTietTTHoaDon
     {
         private static string connectionString = "Server=DESKTOP-J7AQH5B;Database=QLKD_CHTT;User Id=sa;Password=123456;";
-        
+
         public static void XemTTHoaDon(string ID_HD)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM [CTHD] WHERE ID_HD = @ID_HD";
+                    string query = @"SELECT CTHD.ID_HD, CTHD.ID_SP, SP.TenSanPham, CTHD.SoLuong, CTHD.GiaHienTai 
+                              FROM [CTHD] 
+                              JOIN [Sản Phẩm] SP ON CTHD.ID_SP = SP.ID_SP 
+                              WHERE CTHD.ID_HD = @ID_HD";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -27,20 +30,19 @@ namespace DoAn.Services.XemThongTin
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            if (!reader.HasRows) // Nếu không có dữ liệu
+                            if (!reader.HasRows)
                             {
                                 MessageBox.Show("Không tìm thấy chi tiết hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 return;
                             }
 
                             string info = $"Chi tiết hóa đơn: {ID_HD}\n--------------------------------\n";
-                            while (reader.Read()) // Lặp qua tất cả dữ liệu
+                            while (reader.Read())
                             {
-                                info += $"ID_CTHD: {reader["ID_HD"]}, "
-                                      + $"ID_SP: {reader["ID_SP"]}, "
+                                info +=  $"ID_SP: {reader["ID_SP"]}, "
+                                      + $"Tên sản phẩm: {reader["TenSanPham"]}, "
                                       + $"Số lượng: {reader["SoLuong"]}, "
-                                      + $"Đơn giá: {reader["GiaHienTai"]}, ";
-                                      
+                                      + $"Đơn giá: {reader["GiaHienTai"]}\n";
                             }
 
                             MessageBox.Show(info, "Thông tin chi tiết hóa đơn", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -53,5 +55,6 @@ namespace DoAn.Services.XemThongTin
                 MessageBox.Show("Lỗi khi lấy thông tin chi tiết hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

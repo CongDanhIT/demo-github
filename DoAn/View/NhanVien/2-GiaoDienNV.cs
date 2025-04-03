@@ -28,6 +28,9 @@ namespace DoAn.View.NhanVien
         private static int SoHDTrongNgay = 0;
         private static decimal TongThuNgay = 0;
         private  string connectionString = "Server=DESKTOP-J7AQH5B;Database=QLKD_CHTT;User Id=sa;Password=123456;";
+        private DataTable dtSP; // Lưu dữ liệu gốc
+        private DataTable dtHD;
+        private DataTable dtKH; // Lưu dữ liệu khách hàng gốc
         private void _2_GiaoDienNV_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLKD_CHTTDataSet1.Khuyến_Mãi' table. You can move, or remove it, as needed.
@@ -69,20 +72,21 @@ namespace DoAn.View.NhanVien
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-                SELECT SP.*, TK.SoLuongTon 
-                FROM [Sản Phẩm] SP
-                INNER JOIN [Tồn Kho] TK ON SP.ID_SP = TK.ID_SP
-                ORDER BY SP.ID_SP ASC";
+        SELECT SP.*, TK.SoLuongTon 
+        FROM [Sản Phẩm] SP
+        INNER JOIN [Tồn Kho] TK ON SP.ID_SP = TK.ID_SP
+        ORDER BY SP.ID_SP ASC";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    BangSP.DataSource = dt;
+                    dtSP = new DataTable();
+                    adapter.Fill(dtSP);
+                    BangSP.DataSource = dtSP; // Gán dữ liệu cho DataGridView
 
                     // Sắp xếp thứ tự cột
-                    BangSP.Columns["TenSanPham"].DisplayIndex = 1; // Tên sản phẩm ở vị trí [1]
-                    BangSP.Columns["Gia"].DisplayIndex = 4; // Giá ở vị trí [4]
+                    BangSP.Columns["TenSanPham"].DisplayIndex = 1;
+                    BangSP.Columns["Gia"].DisplayIndex = 4;
                     BangSP.Columns["TenSanPham"].Width = 200;
+
                     // Ẩn các cột không cần hiển thị
                     BangSP.Columns["ID_SP"].Visible = false;
                     BangSP.Columns["MaSanPham"].Visible = false;
@@ -171,16 +175,16 @@ namespace DoAn.View.NhanVien
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-                SELECT HD.*, NV.HoTen  
-                FROM [Hóa Đơn] HD  
-                INNER JOIN [Tài khoản] TK ON HD.ID_TK = TK.ID_TK  
-                INNER JOIN [Nhân Viên] NV ON TK.ID_NV = NV.ID_NV";
+        SELECT HD.*, NV.HoTen  
+        FROM [Hóa Đơn] HD  
+        INNER JOIN [Tài khoản] TK ON HD.ID_TK = TK.ID_TK  
+        INNER JOIN [Nhân Viên] NV ON TK.ID_NV = NV.ID_NV";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                    dtHD = new DataTable();
+                    adapter.Fill(dtHD);
 
-                    BangHoaDon.DataSource = dt; // Gán dữ liệu vào DataGridView
+                    BangHoaDon.DataSource = dtHD; // Gán dữ liệu vào DataGridView
 
                     // Kiểm tra xem đã có cột button chưa (tránh bị thêm nhiều lần)
                     if (BangHoaDon.Columns["XemButton"] == null)
@@ -240,7 +244,7 @@ namespace DoAn.View.NhanVien
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message);
             }
         }
-        public  void LoadKH()
+        public void LoadKH()
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -248,12 +252,12 @@ namespace DoAn.View.NhanVien
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
-                    DataTable dt = new DataTable();
+                    dtKH = new DataTable(); // Lưu dữ liệu vào biến toàn cục
                     try
                     {
                         conn.Open();
-                        adapter.Fill(dt);
-                        BangKH.DataSource = dt;
+                        adapter.Fill(dtKH);
+                        BangKH.DataSource = dtKH; // Gán dữ liệu vào DataGridView
                     }
                     catch (Exception ex)
                     {
@@ -387,6 +391,34 @@ namespace DoAn.View.NhanVien
             form.Owner = this;
             form.ShowDialog();
             
+        }
+
+        private void txt_SearchDH_TextChanged(object sender, EventArgs e)
+        {
+
+            if (dtSP != null) // Kiểm tra xem DataTable đã được tải chưa
+            {
+                string filterText = txt_SearchDH.Text.Trim().Replace("'", "''"); // Tránh lỗi SQL Injection
+                dtSP.DefaultView.RowFilter = $"TenSanPham LIKE '%{filterText}%' OR MaSanPham LIKE '%{filterText}%'";
+            }
+        }
+
+        private void txt_SearchHD_TextChanged(object sender, EventArgs e)
+        {
+            if (dtHD != null) // Kiểm tra nếu dữ liệu đã tải
+            {
+                string filterText = txt_SearchHD.Text.Trim().Replace("'", "''"); // Xử lý ký tự đặc biệt
+                dtHD.DefaultView.RowFilter = $"HoTen LIKE '%{filterText}%' OR ID_HD LIKE '%{filterText}%'";
+            }
+        }
+
+        private void txt_SearchKH_TextChanged(object sender, EventArgs e)
+        {
+            if (dtKH != null) // Kiểm tra dữ liệu đã load chưa
+            {
+                string filterText = txt_SearchKH.Text.Trim().Replace("'", "''"); // Tránh lỗi SQL Injection
+                dtKH.DefaultView.RowFilter = $"Ma_KH LIKE '%{filterText}%' OR TenKhach LIKE '%{filterText}%'";
+            }
         }
     }
 }

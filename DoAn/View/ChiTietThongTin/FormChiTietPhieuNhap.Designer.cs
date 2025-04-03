@@ -38,6 +38,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_GiaNhap = new System.Windows.Forms.TextBox();
             this.btn_XacNhan = new System.Windows.Forms.Button();
+            this.txt_IDSP = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BangChiTietPN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -139,7 +141,7 @@
             // btn_XacNhan
             // 
             this.btn_XacNhan.BackColor = System.Drawing.Color.White;
-            this.btn_XacNhan.Location = new System.Drawing.Point(196, 459);
+            this.btn_XacNhan.Location = new System.Drawing.Point(196, 468);
             this.btn_XacNhan.Name = "btn_XacNhan";
             this.btn_XacNhan.Size = new System.Drawing.Size(97, 31);
             this.btn_XacNhan.TabIndex = 9;
@@ -147,12 +149,34 @@
             this.btn_XacNhan.UseVisualStyleBackColor = false;
             this.btn_XacNhan.Click += new System.EventHandler(this.btn_XacNhan_Click);
             // 
+            // txt_IDSP
+            // 
+            this.txt_IDSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txt_IDSP.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IDSP.Location = new System.Drawing.Point(54, 468);
+            this.txt_IDSP.Name = "txt_IDSP";
+            this.txt_IDSP.Size = new System.Drawing.Size(94, 30);
+            this.txt_IDSP.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.label5.Location = new System.Drawing.Point(56, 441);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 23);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "id_SP";
+            // 
             // FormChiTietPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(1029, 581);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_IDSP);
             this.Controls.Add(this.btn_XacNhan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_GiaNhap);
@@ -184,5 +208,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_GiaNhap;
         private System.Windows.Forms.Button btn_XacNhan;
+        private System.Windows.Forms.TextBox txt_IDSP;
+        private System.Windows.Forms.Label label5;
     }
 }

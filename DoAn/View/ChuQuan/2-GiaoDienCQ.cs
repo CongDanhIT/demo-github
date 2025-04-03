@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using DoAn.Helper;
 using DoAn.Modal;
 using DoAn.Services.Them;
@@ -32,6 +33,8 @@ namespace DoAn.View.ChuQuan
 
         // Danh sách sản phẩm đã có trong kho (cần cập nhật số lượng)
         private List<SanPham> danhSachSanPhamCu = new List<SanPham>();
+        private DataTable dtPN; // Lưu dữ liệu phiếu nhập gốc
+        private DataTable dtHD; // Lưu dữ liệu hóa đơn gốc
         private void _2_GiaoDienCQ_Load(object sender, EventArgs e)
         {
             LoadToanBoKho();
@@ -58,6 +61,86 @@ namespace DoAn.View.ChuQuan
                 comb_Kho_SP.ValueMember = "ID_Kho";
             }
         }
+        private void LoadDanhSachHoaDon()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Lấy khoảng thời gian từ DateTimePicker
+                    DateTime tuNgay = date_Start2.Value.Date;
+                    DateTime denNgay = date_end2.Value.Date.AddDays(1).AddTicks(-1);
+
+                    // Truy vấn SQL lấy danh sách hóa đơn kèm theo tên nhân viên
+                    string query = @"
+                SELECT hd.ID_HD, hd.NgayGio, nv.HoTen AS NhanVien, hd.TongTien 
+                FROM [Hóa Đơn] hd
+                INNER JOIN [Tài Khoản] tk ON hd.ID_TK = tk.ID_TK
+                INNER JOIN [Nhân Viên] nv ON tk.ID_NV = nv.ID_NV
+                WHERE hd.NgayGio BETWEEN @TuNgay AND @DenNgay
+                ORDER BY hd.NgayGio DESC";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@TuNgay", tuNgay);
+                        cmd.Parameters.AddWithValue("@DenNgay", denNgay);
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        dgv_HoaDon.DataSource = dt;
+
+                        // Căn chỉnh tự động kích thước cột
+                        dgv_HoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    }
+                  //  MessageBox.Show($"Query: {query}\nTuNgay: {tuNgay}\nDenNgay: {denNgay}");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadDoanhThu()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // Lấy dữ liệu từ UI
+                    int thang = date_Start.Value.Month;
+                    int nam = date_Start.Value.Year;
+
+                    // Truy vấn SQL tính tổng doanh thu của tháng đó
+                    string query = @"
+                SELECT SUM(TongTien) 
+                FROM [Hóa Đơn] 
+                WHERE MONTH(NgayGio) = @Thang AND YEAR(NgayGio) = @Nam";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Thang", thang);
+                        cmd.Parameters.AddWithValue("@Nam", nam);
+
+                        object result = cmd.ExecuteScalar();
+                        decimal doanhThu = (result != DBNull.Value) ? Convert.ToDecimal(result) : 0;
+
+                        // Hiển thị tổng doanh thu lên Label
+                        lbl_TongDoanhThu.Text = $"Tổng doanh thu: {doanhThu:N0} VNĐ";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tính doanh thu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void LoadLocSP()
         {
             try
@@ -73,34 +156,30 @@ namespace DoAn.View.ChuQuan
                     DateTime denNgay = date_end.Value.Date.AddDays(1).AddTicks(-1);
                     string groupBy = radio_Thang.Checked ? "MONTH" : radio_Nam.Checked ? "YEAR" : "DAY";
 
-                    // Xác định điều kiện lọc danh mục
                     string conditionDanhMuc = (string.IsNullOrEmpty(danhMuc) || danhMuc == "Tất Cả") ? "" : "AND sp.Loai = @DanhMuc";
 
-                    // Xây dựng truy vấn SQL dựa trên Kiểu Thống Kê
                     string query = kieuThongKe == "Doanh Thu"
                         ? @"
-                  SELECT sp.ID_SP, sp.TenSanPham, 
-                         DATEPART(" + groupBy + @", hd.NgayGio) AS ThoiGian,
-                         SUM(cthd.SoLuong) AS SLBan,
-                         SUM(cthd.SoTien) AS DoanhThu
-                  FROM CTHD cthd
-                  INNER JOIN [Hóa Đơn] hd ON cthd.ID_HD = hd.ID_HD
-                  INNER JOIN [Sản Phẩm] sp ON cthd.ID_SP = sp.ID_SP
-                  WHERE hd.NgayGio BETWEEN @TuNgay AND @DenNgay " + conditionDanhMuc + @"
-                  GROUP BY sp.ID_SP, sp.TenSanPham, DATEPART(" + groupBy + @", hd.NgayGio)
-                  ORDER BY DoanhThu DESC"
+           SELECT sp.TenSanPham, 
+                  DATEPART(" + groupBy + @", hd.NgayGio) AS ThoiGian,
+                  SUM(cthd.SoTien) AS DoanhThu
+           FROM CTHD cthd
+           INNER JOIN [Hóa Đơn] hd ON cthd.ID_HD = hd.ID_HD
+           INNER JOIN [Sản Phẩm] sp ON cthd.ID_SP = sp.ID_SP
+           WHERE hd.NgayGio BETWEEN @TuNgay AND @DenNgay " + conditionDanhMuc + @"
+           GROUP BY sp.TenSanPham, DATEPART(" + groupBy + @", hd.NgayGio)
+           ORDER BY DoanhThu DESC"
                         : @"
-                  SELECT sp.ID_SP, sp.TenSanPham, 
-                         DATEPART(" + groupBy + @", hd.NgayGio) AS ThoiGian,
-                         SUM(cthd.SoLuong) AS SLBan
-                  FROM CTHD cthd
-                  INNER JOIN [Hóa Đơn] hd ON cthd.ID_HD = hd.ID_HD
-                  INNER JOIN [Sản Phẩm] sp ON cthd.ID_SP = sp.ID_SP
-                  WHERE hd.NgayGio BETWEEN @TuNgay AND @DenNgay " + conditionDanhMuc + @"
-                  GROUP BY sp.ID_SP, sp.TenSanPham, DATEPART(" + groupBy + @", hd.NgayGio)
-                  ORDER BY SLBan DESC";
+           SELECT sp.TenSanPham, 
+                  DATEPART(" + groupBy + @", hd.NgayGio) AS ThoiGian,
+                  SUM(cthd.SoLuong) AS SLBan
+           FROM CTHD cthd
+           INNER JOIN [Hóa Đơn] hd ON cthd.ID_HD = hd.ID_HD
+           INNER JOIN [Sản Phẩm] sp ON cthd.ID_SP = sp.ID_SP
+           WHERE hd.NgayGio BETWEEN @TuNgay AND @DenNgay " + conditionDanhMuc + @"
+           GROUP BY sp.TenSanPham, DATEPART(" + groupBy + @", hd.NgayGio)
+           ORDER BY SLBan DESC";
 
-                    // Khởi tạo SqlCommand và truyền tham số
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.Add(new SqlParameter("@TuNgay", SqlDbType.DateTime) { Value = tuNgay });
@@ -111,22 +190,48 @@ namespace DoAn.View.ChuQuan
                             cmd.Parameters.Add(new SqlParameter("@DanhMuc", danhMuc));
                         }
 
-                        // Đổ dữ liệu vào DataTable và hiển thị
                         DataTable dt = new DataTable();
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         da.Fill(dt);
                         BangLocSP.DataSource = dt;
-
-                        // Cài đặt tự động co giãn cột để lấp đầy khung
                         BangLocSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                        // Gọi hàm load dữ liệu lên Chart
+                        LoadChart(dt, kieuThongKe);
                     }
                 }
             }
             catch (Exception ex)
             {
-                // Bắt lỗi và hiển thị thông báo
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void LoadChart(DataTable dt, string kieuThongKe)
+        {
+            // Xóa dữ liệu cũ trên biểu đồ
+            chart_SanPham.Series.Clear();
+            chart_SanPham.Titles.Clear();
+
+            // Thêm tiêu đề cho biểu đồ
+            chart_SanPham.Titles.Add(kieuThongKe == "Doanh Thu" ? "Biểu đồ Doanh Thu Sản Phẩm" : "Biểu đồ Số Lượng Bán");
+
+            // Tạo Series mới
+            Series series = new Series(kieuThongKe == "Doanh Thu" ? "Doanh Thu" : "Số Lượng Bán");
+            series.ChartType = SeriesChartType.Column; // Có thể đổi sang SeriesChartType.Line nếu muốn hiển thị dạng đường
+
+            // Duyệt dữ liệu và thêm vào series
+            foreach (DataRow row in dt.Rows)
+            {
+                string tenSP = row["TenSanPham"].ToString();
+                int thoiGian = Convert.ToInt32(row["ThoiGian"]);
+                decimal giaTri = kieuThongKe == "Doanh Thu" ? Convert.ToDecimal(row["DoanhThu"]) : Convert.ToInt32(row["SLBan"]);
+
+                // Thêm dữ liệu vào biểu đồ
+                series.Points.AddXY(tenSP + " (" + thoiGian + ")", giaTri);
+            }
+
+            // Thêm Series vào Chart
+            chart_SanPham.Series.Add(series);
         }
 
 
@@ -139,16 +244,15 @@ namespace DoAn.View.ChuQuan
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     string query = @"
-                        SELECT HD.*, NV.HoTen  
-                        FROM [Hóa Đơn] HD  
-                        INNER JOIN [Tài khoản] TK ON HD.ID_TK = TK.ID_TK  
-                        INNER JOIN [Nhân Viên] NV ON TK.ID_NV = NV.ID_NV";
+                SELECT HD.*, NV.HoTen  
+                FROM [Hóa Đơn] HD  
+                INNER JOIN [Tài khoản] TK ON HD.ID_TK = TK.ID_TK  
+                INNER JOIN [Nhân Viên] NV ON TK.ID_NV = NV.ID_NV";
 
                     SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-
-                    BangHoaDon.DataSource = dt; // Gán dữ liệu vào DataGridView
+                    dtHD = new DataTable(); // Lưu dữ liệu vào biến toàn cục
+                    adapter.Fill(dtHD);
+                    BangHoaDon.DataSource = dtHD; // Gán dữ liệu vào DataGridView
 
                     // Tăng chiều rộng cột HoTen
                     BangHoaDon.Columns["HoTen"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -159,7 +263,7 @@ namespace DoAn.View.ChuQuan
                     {
                         DataGridViewButtonColumn btnXem = new DataGridViewButtonColumn();
                         btnXem.Name = "XemButton";
-                        btnXem.HeaderText = "Xem";
+                        btnXem.HeaderText = "";
                         btnXem.Text = "Xem";
                         btnXem.UseColumnTextForButtonValue = true;
                         BangHoaDon.Columns.Insert(0, btnXem); // Thêm vào vị trí đầu tiên
@@ -170,7 +274,7 @@ namespace DoAn.View.ChuQuan
                     {
                         DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
                         btnSua.Name = "SuaButton";
-                        btnSua.HeaderText = "Sửa";
+                        btnSua.HeaderText = "";
                         btnSua.Text = "Sửa";
                         btnSua.UseColumnTextForButtonValue = true;
                         BangHoaDon.Columns.Insert(1, btnSua); // Thêm vào vị trí thứ hai
@@ -238,7 +342,7 @@ namespace DoAn.View.ChuQuan
                 {
                     DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
                     btnSua.Name = "btnSua";
-                    btnSua.HeaderText = "Hành động";
+                    btnSua.HeaderText = "";
                     btnSua.Text = "Sửa";
                     btnSua.UseColumnTextForButtonValue = true;
                     btnSua.Width = 100; // Điều chỉnh chiều rộng
@@ -268,7 +372,7 @@ namespace DoAn.View.ChuQuan
                 {
                     DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
                     btn.Name = "btnDuaLenCuaHang";
-                    btn.HeaderText = "Hành động";
+                    btn.HeaderText = "";
                     btn.Text = "Đưa lên cửa hàng";
                     btn.UseColumnTextForButtonValue = true;
                     btn.Width = 150; // Tăng chiều rộng
@@ -287,9 +391,9 @@ namespace DoAn.View.ChuQuan
                     conn.Open();
                     string query = "SELECT * FROM [Phiếu Nhập]";
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    BangPN.DataSource = dt;
+                    dtPN = new DataTable(); // Lưu dữ liệu vào biến toàn cục
+                    adapter.Fill(dtPN);
+                    BangPN.DataSource = dtPN; // Gán dữ liệu vào DataGridView
                 }
 
                 // Kiểm tra nếu chưa có cột button "Xem" thì mới thêm vào
@@ -298,7 +402,7 @@ namespace DoAn.View.ChuQuan
                     DataGridViewButtonColumn btnXem = new DataGridViewButtonColumn
                     {
                         Name = "btnXem",
-                        HeaderText = "Xem",
+                        HeaderText = "",
                         Text = "Xem",
                         UseColumnTextForButtonValue = true
                     };
@@ -311,11 +415,11 @@ namespace DoAn.View.ChuQuan
                     DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn
                     {
                         Name = "btnSua",
-                        HeaderText = "Sửa",
+                        HeaderText = "",
                         Text = "Sửa",
                         UseColumnTextForButtonValue = true
                     };
-                    BangPN.Columns.Insert(1, btnSua); // Chèn ngay sau cột "Xem" (Cột 2)
+                    BangPN.Columns.Insert(1, btnSua); // Chèn ngay sau cột "Xem"
                 }
 
                 BangPN.CellContentClick -= BangPN_CellContentClick;
@@ -939,13 +1043,15 @@ namespace DoAn.View.ChuQuan
 
                 if (reader.Read())
                 {
-                    lbl_NVDT.Text = $"{reader["HoTen"]} với doanh thu {reader["DoanhThu"]} VNĐ";
+                    string tenNV = reader["HoTen"].ToString();
+                    string doanhThu = Convert.ToDecimal(reader["DoanhThu"]).ToString("#,##0 VNĐ");
+
+                    lbl_NVDT.Text = $"🎉 Nhân viên xuất sắc: {tenNV}\n📊 Doanh thu: {doanhThu}";
                 }
                 else
                 {
                     lbl_NVDT.Text = "Không có dữ liệu";
                 }
-
                 reader.Close();
             }
         }
@@ -955,6 +1061,36 @@ namespace DoAn.View.ChuQuan
         {
             LoadBangTKNV();
             HienThiNVDT();
+        }
+
+        private void btn_Loc3_Click(object sender, EventArgs e)
+        {
+            LoadDoanhThu();
+            LoadDanhSachHoaDon();
+        }
+
+        private void txt_SearchPN_TextChanged(object sender, EventArgs e)
+        {
+            if (dtPN != null) // Kiểm tra dữ liệu đã load chưa
+            {
+                string filterText = txt_SearchPN.Text.Trim().Replace("'", "''"); // Tránh lỗi SQL Injection
+                dtPN.DefaultView.RowFilter = $"ID_PhieuNhap LIKE '%{filterText}%' OR CONVERT(NgayNhap, 'System.String') LIKE '%{filterText}%'";
+            }
+        }
+
+        private void txt_SearchHD1_TextChanged(object sender, EventArgs e)
+        {
+
+            if (dtHD != null) // Kiểm tra dữ liệu đã load chưa
+            {
+                string filterText = txt_SearchHD1.Text.Trim().Replace("'", "''"); // Tránh lỗi SQL Injection
+                dtHD.DefaultView.RowFilter = $"ID_HD LIKE '%{filterText}%' OR HoTen LIKE '%{filterText}%'";
+            }
+        }
+
+        private void BangKho_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
        

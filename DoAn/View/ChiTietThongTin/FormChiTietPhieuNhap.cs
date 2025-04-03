@@ -25,7 +25,7 @@ namespace DoAn.View.ChiTietThongTin
             this.Form = form;
         }
         private  string connectionString = "Server=DESKTOP-J7AQH5B;Database=QLKD_CHTT;User Id=sa;Password=123456;";
-
+        private int SLbanDau;
         private void ChiTietPhieuNhap_Load(object sender, EventArgs e)
         {
             LoadChiTietPhieuNhap(maPhieuNhap,Form);
@@ -74,14 +74,20 @@ namespace DoAn.View.ChiTietThongTin
             if (e.RowIndex >= 0 && BangChiTietPN.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
             {
                 // Lấy dữ liệu từ hàng được chọn
-                string tenSP = BangChiTietPN.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
-                string soLuong = BangChiTietPN.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString();
-                string giaNhap = BangChiTietPN.Rows[e.RowIndex].Cells["GiaNhap"].Value.ToString();
+                string tenSP = BangChiTietPN.Rows[e.RowIndex].Cells["TenSP"].Value?.ToString() ?? "";
+                string soLuong = BangChiTietPN.Rows[e.RowIndex].Cells["SoLuong"].Value?.ToString() ?? "";
+                SLbanDau = int.Parse(soLuong);
+                string giaNhap = BangChiTietPN.Rows[e.RowIndex].Cells["GiaNhap"].Value?.ToString() ?? "";
+
+                // Kiểm tra ID_SP có giá trị không
+                object value = BangChiTietPN.Rows[e.RowIndex].Cells["ID_SP"].Value;
+                string idSP = (value != null && !string.IsNullOrWhiteSpace(value.ToString())) ? value.ToString() : "";
 
                 // Gán dữ liệu vào các TextBox
                 txt_TenSP.Text = tenSP;
                 txt_SoLuong.Text = soLuong;
                 txt_GiaNhap.Text = giaNhap;
+                txt_IDSP.Text = idSP;
             }
         }
 
@@ -91,8 +97,9 @@ namespace DoAn.View.ChiTietThongTin
             string tenSP = txt_TenSP.Text;
             int.TryParse(txt_SoLuong.Text, out int soLuong);
             decimal.TryParse(txt_GiaNhap.Text, out decimal giaNhap);
+            string id_SP = txt_IDSP.Text;
 
-            bool capNhatThanhCong = CapNhatCTNK.CapNhat(maPhieuNhap, tenSP, soLuong, giaNhap);
+            bool capNhatThanhCong = CapNhatCTNK.CapNhat(maPhieuNhap, tenSP, soLuong, giaNhap,id_SP,SLbanDau);
             bool capNhatTongTienThanhCong = CapNhatCTNK.CapNhatTongTienPN(maPhieuNhap);
 
             if (capNhatThanhCong && capNhatTongTienThanhCong)
@@ -100,6 +107,7 @@ namespace DoAn.View.ChiTietThongTin
                 MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadChiTietPhieuNhap(maPhieuNhap,Form);
                 Form.LoadPhieuNhap();
+
             }
             else
             {
